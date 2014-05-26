@@ -1,0 +1,80 @@
+#slider {
+
+	@media #{$small-up} { 
+		background: url('../i/small-bg.jpg') 0 0 no-repeat;
+		background-size: cover;
+
+		h1, h4 {
+			margin: 20px 0;
+			line-height: 1;
+		}
+
+		h1 {
+			font-size: 26px;
+		}
+
+		h4 {
+			font-size: 14px;
+			line-height: 1.2;
+		}
+	}
+
+	@media #{$medium-up} {
+
+	}
+
+	@media #{$large-up} {
+		height: 100%;
+
+		h1 {
+			font-size: 58px;
+			line-height: 1;
+			margin-bottom: 30px;
+		}
+		h4 {
+			font-size: 18px;
+			margin-bottom: 40px;
+		}
+	}
+
+	h1, h2, h3, h4, h5 {
+		color: #fff;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	
+	.orbit-container {
+		margin-top: 0;
+		width: 100%;
+		height: 100%;
+	}
+  
+	.orbit-slides-container {
+		width: 100%;
+		height: 100% !important;
+		li {
+			//padding-top: 200px;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			overflow: hidden;
+
+			.slide-inner {
+				position: absolute;
+				padding: 20px;
+				width: 100%;
+			}
+		}
+	}
+	video {
+		position: absolute;
+		bottom: 0px;
+		right: 0px;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -1000;
+		overflow: hidden;
+	}
+}
