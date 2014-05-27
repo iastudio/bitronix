@@ -6,10 +6,10 @@
     <title>Bitronix</title>
     <link rel="stylesheet" href="stylesheets/app.css" />
     <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
       <script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
       <script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 
       <link rel="stylesheet" href="stylesheets/ie.css" />
     <![endif]-->
@@ -324,6 +324,39 @@
     <![endif]-->
     
     <script src="bower_components/foundation/js/foundation.min.js"></script>
+
+    <!--[if lt IE 9]>
+      <script type="text/javascript">
+        (function($) {
+          if (!Foundation.stylesheet) {
+            Foundation._style_element = $("<style></style>").appendTo("head")[0];
+            Foundation.stylesheet = Foundation._style_element.styleSheet;
+            if (Foundation.stylesheet) {
+              Foundation.stylesheet.cssRules = {
+                length: 0
+              };
+              Foundation.stylesheet.insertRule = function(rule, index) {
+                var media, mediaMatch, mediaRegex, namespace, ruleMatch, ruleRegex;
+                mediaRegex = /^\s*@media\s*(.*?)\s*\{\s*(.*?)\s*\}\s*$/;
+                mediaMatch = mediaRegex.exec(rule);
+                media = "";
+                if (mediaMatch) {
+                  media = "@media " + mediaMatch[1] + " ";
+                  rule = mediaMatch[2];
+                }
+                ruleRegex = /^\s*(.*?)\s*\{\s*(.*?)\s*\}\s*$/;
+                ruleMatch = ruleRegex.exec(rule);
+                namespace = "" + media + ruleMatch[1];
+                rule = ruleMatch[2];
+                return this.addRule(namespace, rule);
+              };
+            } else if (window.console) {
+              console.log("Could not fix Foundation css rules...");
+            }
+          }
+        })(jQuery);
+      </script>
+    <![endif]-->
 
     <script src="js/PxLoader.js"></script>
     <script src="js/PxLoaderVideo.js"></script>

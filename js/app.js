@@ -16,7 +16,7 @@ $(function() {
     // Chosen
 
     $(".chosen-select").chosen().change( function(){
-        $('.section-content').flexVerticalCenter({ cssAttribute: 'padding-top' });
+        //$('.section-content').flexVerticalCenter({ cssAttribute: 'padding-top' });
     });
 
     // Phone dropdown
