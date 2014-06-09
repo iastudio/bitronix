@@ -7,7 +7,7 @@ $(document).on('replace', function () {
     onReplace();
 });
 
-Foundation.set_namespace = function() {};
+//Foundation.set_namespace = function() {};
 
 $(document).foundation(); // Foundation init
 
