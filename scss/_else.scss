@@ -119,13 +119,13 @@
 		float: left !important;
 		img {
 			transition: all .1s linear;
-		    filter: url('../filters.svg#grayscale'); /* Firefox 3.5+ */
-		    filter: gray; /* IE6-9 */
-		    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
-		    opacity: 0.9;
+		    // filter: url('../filters.svg#grayscale'); /* Firefox 3.5+ */
+		    // filter: gray; /* IE6-9 */
+		    // -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+		    opacity: 0.7;
 			&:hover {
-			    filter: none;
-			    -webkit-filter: grayscale(0);
+			    // filter: none;
+			    // -webkit-filter: grayscale(0);
 			    opacity: 1;
 			}
 		}
